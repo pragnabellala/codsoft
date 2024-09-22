@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: #2196f3;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .display {
+            width: 100%;
+            background-color: #e0f7fa;
+            text-align: right;
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            height: 50px;
+            color: black;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn.operation {
+            background-color: #ffeb3b;
+        }
+
+        .btn.equal {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <div class="display" id="display">0</div>
+    <button class="btn" onclick="appendNumber(7)">7</button>
+    <button class="btn" onclick="appendNumber(8)">8</button>
+    <button class="btn" onclick="appendNumber(9)">9</button>
+    <button class="btn operation" onclick="chooseOperation('+')">+</button>
+    <br>
+    <button class="btn" onclick="appendNumber(4)">4</button>
+    <button class="btn" onclick="appendNumber(5)">5</button>
+    <button class="btn" onclick="appendNumber(6)">6</button>
+    <button class="btn operation" onclick="chooseOperation('-')">-</button>
+    <br>
+    <button class="btn" onclick="appendNumber(1)">1</button>
+    <button class="btn" onclick="appendNumber(2)">2</button>
+    <button class="btn" onclick="appendNumber(3)">3</button>
+    <button class="btn equal" onclick="compute()">=</button>
+</div>
+
+<script>
+    let currentInput = '';
+    let previousInput = '';
+    let operation = undefined;
+
+    function appendNumber(number) {
+        if (currentInput === '0') currentInput = '';
+        currentInput += number;
+        updateDisplay();
+    }
+
+    function chooseOperation(op) {
+        if (currentInput === '') return;
+        if (previousInput !== '') compute();
+        operation = op;
+        previousInput = currentInput;
+        currentInput = '';
+    }
+
+    function compute() {
+        let result;
+        const prev = parseFloat(previousInput);
+        const current = parseFloat(currentInput);
+        if (isNaN(prev) || isNaN(current)) return;
+        switch (operation) {
+            case '+':
+                result = prev + current;
+                break;
+            case '-':
+                result = prev - current;
+                break;
+            default:
+                return;
+        }
+        currentInput = result;
+        operation = undefined;
+        previousInput = '';
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        document.getElementById('display').innerText = currentInput || '0';
+    }
+</script>
+
+</body>
+</html>

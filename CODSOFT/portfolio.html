@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Demo</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            color: #6c63ff;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: #fff;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin: 0;
+            color: #333;
+        }
+
+        .hero-text p {
+            margin: 20px 0;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6c63ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #5a52db;
+        }
+
+        .hero-image {
+            max-width: 50%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>&lt;Saad Poster&gt;</h2>
+        </div>
+        <nav>
+            <a href="#">Skills</a>
+            <a href="#">Open Source</a>
+            <a href="#">Projects</a>
+            <a href="#">Achievements</a>
+            <a href="#">Blogs</a>
+            <a href="#">Talks</a>
+            <a href="#">Contact Me</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Hi all I'm Saad 👋</h1>
+            <p>A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications
+                with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub"></a>
+                <a href="#"><img src="https://img.icons8.com/color/50/000000/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="https://img.icons8.com/color/50/000000/google-logo.png" alt="Google"></a>
+                <a href="#"><img src="https://img.icons8.com/color/50/000000/gitlab.png" alt="GitLab"></a>
+                <a href="#"><img src="https://img.icons8.com/color/50/000000/facebook-new.png" alt="Facebook"></a>
+            </div>
+            <div class="buttons">
+                <a href="#" class="button">CONTACT ME</a>
+                <a href="#" class="button">SEE MY RESUME</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Replace with the actual image URL -->
+            <img src="path/to/your/illustration.png" alt="Illustration">
+        </div>
+    </section>
+
+</body>
+</html>
